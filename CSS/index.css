@@ -53,6 +53,12 @@ ul li {
     text-align: center;
 }
 
-input:focus {
-    outline: 3px solid rgb(64, 124, 208);
+@media screen and (orientation: portrait) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    .navwrap {
+        grid-column: 1 / 2;
+    }
 }
