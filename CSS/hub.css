@@ -1,0 +1,27 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+a {
+    background: linear-gradient(var(--acc) 0 0) 
+    bottom center/
+    var(--underline-width, 0%) 1px
+    no-repeat;
+
+    transition: background 0.25s ease-in-out;
+    width: max-content;
+}
+
+a:hover {
+    color: var(--acc);
+    --underline-width:100%
+}
+
+.atoz {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    top: -4rem;
+}

@@ -18,6 +18,10 @@
     --warn: rgb(255, 0, 0);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: radial-gradient(
         circle,
@@ -28,6 +32,12 @@ body {
     color: var(--fc-prim);
     height: 100dvh;
     padding: 1rem;
+}
+
+nav img.back {
+    width: 3rem;
+    height: 3rem;
+    transform: rotate(180deg);
 }
 
 main {
@@ -42,6 +52,10 @@ input {
     width: 20rem;
     height: 4rem;
     padding: 1rem;
+}
+
+input:focus {
+    outline: 3px solid rgb(64, 124, 208);
 }
 
 h1,
@@ -88,14 +102,4 @@ p {
 
 a {
     text-decoration: none;
-}
-
-nav img.back {
-    width: 3rem;
-    height: 3rem;
-    transform: rotate(180deg);
-}
-
-input:focus {
-    outline: 3px solid rgb(64, 124, 208);
 }
