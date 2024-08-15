@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+
+    --bg-prim: rgb(207, 224, 196);
+    --bg-sec: rgb(231, 223, 207);
+
+    --fc-prim: rgb(0, 0, 0);
+    
+    --acc: rgb(67, 149, 226);
+    --acc-hover: rgb(98, 146, 235);
+    --warn: rgb(255, 0, 0);
+}
+
+body {
+    background-color: var(--bg-prim);
+    
+    color: var(--fc-prim);
+}
+
+input {
+    font-family: "Noto Serif", serif;
+    font-size: clamp(1rem, 1.25dvw, 4rem);
+    background-color: var(--bg-sec);
+    border: 1px solid var(--fc-prim);
+    width: 20rem;
+    height: 4rem;
+}
+
+h1,
+h2,
+h4,
+h5,
+h6,
+a,
+p {
+    color: var(--font-prim);
+
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 2dvw, 5rem);
+    font-weight: 400;
+}
+
+h2 {
+    font-size: clamp(2rem, 1.5dvw, 3.75rem);
+    font-weight: 400;
+}
+
+h4 {
+    font-size: clamp(1rem, 0.75dvw, 3rem);
+    font-weight: 300;
+}
+
+h5 {
+    font-size: clamp(3rem, 3dvw, 10rem);
+    font-weight: 700;
+}
+
+h6 {
+    font-size: clamp(4rem, 4dvw, 10rem);
+    font-weight: 700;
+}
+
+p {
+    font-size: clamp(1rem, 1.25dvw, 4rem);
+}
+
+a {
+    text-decoration: none;
+}
