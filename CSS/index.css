@@ -72,4 +72,7 @@ ul li {
     width: 20rem;
     padding: 1rem;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
 }
