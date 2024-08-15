@@ -1,5 +1,5 @@
 let tobeDisplayed = [];
-var pages = ['example', 'example2', 'example3'];
+let pages = ['example', 'example2', 'example3'];
 var searchbar = document.getElementById('searchbar');
 var searchbox = document.getElementById('searchbox');
 
@@ -11,10 +11,6 @@ searchbar.addEventListener('keyup', () => {
 searchbar.addEventListener('focus', () => {
     searchbox.style.visibility = 'visible';
     insertInitial();
-});
-
-searchbar.addEventListener('blur', () => {
-    searchbox.style.visibility = 'hidden';
 });
 
 function parseArray(value) {
@@ -36,7 +32,6 @@ function insertInitial() {
     var div = document.getElementById('searchbox');
     while(div.firstChild){
         div.removeChild(div.firstChild);
-        console.log('cleared');
     }
 
     for (var i = 0; i < 16; i++) {
@@ -51,7 +46,6 @@ function insertElements() {
     var div = document.getElementById('searchbox');
     while(div.firstChild){
         div.removeChild(div.firstChild);
-        console.log('cleared');
     }
     
     if (tobeDisplayed.length === 0) {
@@ -63,22 +57,26 @@ function insertElements() {
         if (tobeDisplayed[i] == undefined) {
             break;
         }
-        searchbox.insertAdjacentHTML('beforeend', '<p class="misery">'+tobeDisplayed[i]+'</p>');
-
-        var misery = document.getElementsByClassName('misery');
-        misery[i].addEventListener('click', bindClick());
+        searchbox.insertAdjacentHTML('beforeend', '<p class="searchresult" data-page="'+tobeDisplayed[i]+'">'+tobeDisplayed[i]+'</p>');
     };
-    
-    console.log(tobeDisplayed);
-};
 
-function bindClick() {
-    return function() {
-        console.log('kgdfjlkgjdf');
-    };
+    let searchresults = document.getElementsByClassName('searchresult');
+
+    for (var i = 0; i < searchresults.length; i++) {
+        searchresults[i].addEventListener('click', function() {
+            loadPage(this.textContent, 'ligos');
+        })
+    }
 };
 
 function loadPage(page, type) {
     location.assign('/lt/'+type+'/'+page);
-};
+}; 
 
+
+searchbar.addEventListener('blur', () => {
+    setTimeout(() => {
+        searchbox.style.visibility = 'hidden';
+    }, 1000);
+    searchbar.value = ""
+});
