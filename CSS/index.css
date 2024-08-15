@@ -50,6 +50,7 @@ ul li {
 .logo > img,
 .logo > h1 {
     transform: scale(1.5);
+    text-align: center;
 }
 
 input:focus {

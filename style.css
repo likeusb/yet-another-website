@@ -13,8 +13,8 @@
 
     --fc-prim: rgb(0, 0, 0);
     
-    --acc: rgb(67, 149, 226);
-    --acc-hover: rgb(98, 146, 235);
+    --acc: rgb(67, 116, 226);
+    --acc-hover: rgb(74, 63, 235);
     --warn: rgb(255, 0, 0);
 }
 
@@ -28,6 +28,10 @@ body {
     color: var(--fc-prim);
     height: 100dvh;
     padding: 1rem;
+}
+
+main {
+    padding: 2rem 15% 8rem;
 }
 
 input {

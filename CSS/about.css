@@ -1,5 +1,4 @@
 main {
-    padding: 0 15%;
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -41,7 +40,7 @@ main {
 }
 
 .tlItem {
-    --sizeOfConnector: calc();
+    --sizeOfConnector: calc(sqrt(2) * 1rem);
 
     background-color: var(--bg-sec);
     padding: 1rem 1rem 2rem 1rem;
@@ -80,10 +79,56 @@ main {
     grid-column: 5 / 6;
 }
 
-.tlItem:nth-child(odd) > .connector {
-    background-color: aqua;
-    position: absolute;
-    bottom: 0;
+.connector {
+    width: var(--sizeOfConnector);
+    height: var(--sizeOfConnector);
     align-self: center;
+    position: absolute;
+    background-color: var(--bg-sec);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.connector::before {
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--acc);
+    content: "";
+    position: absolute;
+    border-radius: 1rem;
+}
+
+.tlItem:nth-child(odd) > .connector {
+    bottom: 0;
     transform: translateY(50%) rotate(45deg);
+    border-right: 1px solid var(--fc-prim);
+    border-bottom: 1px solid var(--fc-prim);
+}
+
+.tlItem:nth-child(odd) > .connector::before {
+    transform: translate(0.85rem, 0.85rem) rotate(-45deg);
+}
+
+.tlItem:nth-child(even) > .connector {
+    top: 0;
+    transform: translateY(-50%) rotate(-45deg);
+    border-right: 1px solid var(--fc-prim);
+    border-top: 1px solid var(--fc-prim);
+}
+
+.tlItem:nth-child(even) > .connector::before {
+    transform: translate(0.85rem, -0.85rem) rotate(45deg);
+}
+
+.trisplit {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.trisplit > div {
+    background-color: var(--bg-sec);
+    padding: 1rem;
+    border: 1px solid var(--fc-prim);
 }
